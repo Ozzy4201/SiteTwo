@@ -1,0 +1,15 @@
+{
+  "name": "secondsite",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "bla bla bla",
+    "sass": "node-sass -w scss/ -o css/"
+  },
+  "author": "Ozzy",
+  "license": "ISC",
+  "dependencies": {
+    "node-sass": "^7.0.3"
+  }
+}

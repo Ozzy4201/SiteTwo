@@ -1,0 +1,155 @@
+/**
+ * initial colours
+ */
+ html {
+    --c0: rgb(244,229,228);
+    --c1: rgb(253,211,212);
+    --c2: rgb(218,190,217);
+    --c3: rgb(201,175,218);
+    --c4: rgb(175,158,204);
+    --c5: rgb(164,151,197);
+    --c6: rgb(126,137,190);
+    --c7: rgb(100,114,171);
+    --c8: rgb(84,89,134);
+    --c9: rgb(63,66,99);
+    --c10: rgb(46,44,64);
+    --c99: rgb(255,255,255);
+  }
+  * {
+    scroll-behavior: smooth;
+  }
+  /**
+   * sun
+   */
+  $sun-size: unquote("min(4rem, 10vw)");
+  $sun-movement-v: 30%;
+  $sun-movement-h: 40%;
+  .landscape {
+      &__sunWrap {
+          $distance: 10;
+          bottom: 10%;
+          height: 75%;
+          left: 0;
+          position: absolute;
+          transform: translateY(var(--scrollPos, 0));
+          width: 100%;
+          @media (prefers-reduced-motion: reduce) {
+              display: none;
+          }
+      }
+      
+      &__sun {
+          height: 100%;
+          left: 0;
+          position: absolute;
+          top: 0;
+          transform:
+              translateX(calc(#{$sun-movement-h} * var(--sun-h)))
+              translateY(calc(#{$sun-movement-v} * var(--sun-v)));
+          width: 100%;
+          
+          // the actual sun element
+          &::before {
+              background: #fff;
+              border-radius: 50%;
+              content: '';
+              height: $sun-size;
+              left: 50%;
+              position: absolute;
+              top: 50%;
+              transform: translate(-50%, -50%);
+              width: $sun-size;
+          }
+      }
+  }
+  
+  /**
+   * wrapping landscape, see https://alistairshepherd.uk/writing/parallax-svg-landscape-1/
+   * for an explanation of this
+   */
+  // wrapping landscape
+  .landscape {
+    background: var(--c1);
+    height: 75vh;
+    overflow: hidden;
+    position: relative;
+  
+    // positioning for each layer and parallax
+    &__layer {
+      // positioning
+      height: 100%;
+      left: 0;
+      position: absolute;
+      top: 0;
+      width: 100%;
+      
+      // parallax
+      transform: translateY(calc(var(--scrollPos, 0) * var(--offset, 0)));
+  
+      @media (prefers-reduced-motion: reduce) {
+        transform: translateY(0);
+      }
+    }
+  
+    // svg wrapper
+    &__image {
+      bottom: 0;
+      display: flex;
+      flex-direction: column;
+      left: 50%;
+      max-height: 100%;
+      max-width: 300%;
+      min-width: 100%;
+      position: absolute;
+      transform: translateX(-50%);
+      width: 2500px;
+  
+      svg {
+        display: block;
+        height: auto;
+        max-width: 100%;
+      }
+    }
+  }
+  
+  /**
+   * Styles for demo
+   */
+  // typography styles and ensure body is long enough to scroll
+  body {
+    background: var(--c10);
+    color: #fff;
+    min-height: 200vh;
+  }
+  
+  // content section
+  .wrap {
+    margin: 5rem auto;
+    max-width: 70rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    position: relative;
+  }
+  
+  a {
+    color: inherit;
+    text-decoration-color: var(--c6);
+  }
+  
+  button {
+    font-weight: 900;
+    background: var(--c4);
+    border: 2px solid transparent;
+    color: var(--c10);
+    cursor: pointer;
+    display: inline-block;
+    padding: unquote(".5rem 2rem");
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: all .2s;
+    
+    &[data-active] {
+      background: var(--c1);
+    }
+  }
