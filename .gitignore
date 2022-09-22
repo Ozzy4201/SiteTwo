@@ -130,4 +130,8 @@ dist
 .yarn/install-state.gz
 .pnp.*
 
+<<<<<<< HEAD
 scss
+=======
+scss
+>>>>>>> 4956013bf770e64e214f0c534002a72661dc09aa
