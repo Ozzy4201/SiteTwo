@@ -1,195 +1,138 @@
-/**
- * initial colours
- */
+
  html {
-    --c0: rgb(244,229,228);
-    --c1: rgb(253,211,212);
-    --c2: rgb(218,190,217);
-    --c3: rgb(201,175,218);
-    --c4: rgb(175,158,204);
-    --c5: rgb(164,151,197);
-    --c6: rgb(126,137,190);
-    --c7: rgb(100,114,171);
-    --c8: rgb(84,89,134);
-    --c9: rgb(63,66,99);
-    --c10: rgb(46,44,64);
-    --c99: rgb(255,255,255);
+  --c0:rgb(188,215,248);
+  --c1:rgb(126,166,215); 
+  --c2:rgb(44,119,191); 
+  --c3:rgb(27,96,165); 
+  --c4:rgb(19,86,151); 
+  --c5:rgb(18,78,143); 
+  --c6:rgb(9,56,101); 
+  --c7:rgb(5,43,79);
+  --c8:rgb(1,32,62); 
+  --c9:rgb(0,27,51); 
+  --c10:rgb(0,16,31); 
+  --c99:rgb(255,255,255);
   }
   * {
     scroll-behavior: smooth;
     box-sizing: border-box; 
   }
-  /**
-   * sun
-   */
-  $sun-size: unquote("min(4rem, 10vw)");
-  $sun-movement-v: 30%;
-  $sun-movement-h: 40%;
-  .landscape {
-      &__sunWrap {
-          $distance: 10;
-          bottom: 10%;
-          height: 75%;
-          left: 0;
-          position: absolute;
-          transform: translateY(var(--scrollPos, 0));
-          width: 100%;
-          @media (prefers-reduced-motion: reduce) {
-              display: none;
-          }
-      }
-      
-      &__sun {
-          height: 100%;
-          left: 0;
-          position: absolute;
-          top: 0;
-          transform:
-              translateX(calc(#{$sun-movement-h} * var(--sun-h)))
-              translateY(calc(#{$sun-movement-v} * var(--sun-v)));
-          width: 100%;
-          
-          // the actual sun element
-          &::before {
-              background: #fff;
-              border-radius: 50%;
-              content: '';
-              height: $sun-size;
-              left: 50%;
-              position: absolute;
-              top: 50%;
-              transform: translate(-50%, -50%);
-              width: $sun-size;
-          }
-      }
-  }
   
-  /**
-   * wrapping landscape, see https://alistairshepherd.uk/writing/parallax-svg-landscape-1/
-   * for an explanation of this
-   */
-  // wrapping landscape
-  .landscape {
-    background: var(--c1);
-    height: 75vh;
-    overflow: hidden;
-    position: relative;
+.landscape {
+  background: var(--c1);
+  height: 75vh;
+  overflow: hidden;
+  position: relative;
   
-    // positioning for each layer and parallax
-    &__layer {
-      // positioning
-      height: 100%;
-      left: 0;
-      position: absolute;
-      top: 0;
-      width: 100%;
-      
-      // parallax
-      transform: translateY(calc(var(--scrollPos, 0) * var(--offset, 0)));
+  &__layer {
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+
+    transform: translateY(calc(var(--scrollPos, 0) * var(--offset, 0)));
   
       @media (prefers-reduced-motion: reduce) {
         transform: translateY(0);
       }
-    }
-  
-    // svg wrapper
-    &__image {
-      bottom: 0;
-      display: flex;
-      flex-direction: column;
-      left: 50%;
-      max-height: 100%;
-      max-width: 300%;
-      min-width: 100%;
-      position: absolute;
-      transform: translateX(-50%);
-      width: 2500px;
-  
-      svg {
-        display: block;
-        height: auto;
-        max-width: 100%;
-      }
-    }
   }
   
-  /**
-   * Styles for demo
-   */
-  // typography styles and ensure body is long enough to scroll
-  body {
-    background: var(--c10);
-    color: #fff;
-    min-height: 200vh;
-  }
-  
-  // content section
-  .wrap {
-    margin: 5rem auto;
-    max-width: 70rem;
-    padding-left: 1rem;
-    padding-right: 1rem;
-    position: relative;
-  }
-  
-  a {
-    color: inherit;
-    text-decoration-color: var(--c6);
-  }
-  
-  button {
-    font-weight: 900;
-    background: var(--c4);
-    border: 2px solid transparent;
-    color: var(--c10);
-    cursor: pointer;
-    display: inline-block;
-    padding: unquote(".5rem 2rem");
-    text-align: center;
-    text-decoration: none;
-    text-transform: uppercase;
-    transition: all .2s;
-    
-    &[data-active] {
-      background: var(--c1);
-    }
-  }
 
-h1 {
-    font-weight: normal;
-    color: black;
+  &__image {
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    left: 50%;
+    max-height: 100%;
+    max-width: 300%;
+    min-width: 100%;
+    position: absolute;
+    transform: translateX(-50%);
+    width: 2500px;
+    svg {
+      display: block;
+      height: auto;
+      max-width: 100%;
+    }
+  }
 }
+  
+body {
+  background: var(--c10);
+  color: #fff;
+  min-height: 200vh;
+}
+
+.wrap {
+  margin: 5rem auto;
+  max-width: 70rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  position: relative;
+}
+  
+a {
+  color: inherit;
+  text-decoration-color: var(--c6);
+}
+  
+button {
+  font-weight: 900;
+  background: var(--c4);
+  border: 2px solid transparent;
+  color: var(--c10);
+  cursor: pointer;
+  display: inline-block;
+  padding: unquote(".5rem 2rem");
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: all .2s;  
+  &[data-active] {
+    background: var(--c1);
+  }
+}
+
+.box h1 {
+  font-weight: normal;
+  color: black;
+}
+
 a {
   text-decoration: none;
   font-weight: bold;
   background: linear-gradient(135deg, rgba(43,171,217,1) 0%, rgba(0,130,200,1) 100%);
+  background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
 }
+
 html, body {
   font-family: "Montserrat", Arial;
 }
+
 .card {
   position: absolute;
   background-color: #F8F8F8;
 	border-radius: 1.5em;
   min-width: 400px;
-	max-width: 1170px;
+	max-width: 500px;
   width: 30%;
 	padding: 2.6em;
-	cursor: pointer;
   top: 40%;
   transform: translate(-50%, -50%);
-  left: 20%;
+  left: 15%;
 	box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1), 
 		0 8px 8px rgba(0, 0, 0, 0.1),
 		0 16px 16px rgba(0, 0, 0, 0.1), 
 		0 32px 32px rgba(0, 0, 0, 0.15),
 		0 64px 64px rgba(0, 0, 0, 0.15);
 }
+
 .note::after {
 	content: '';
-	width: 20%;
+	width: 100%;
 	height: 2px;
 	border-radius: 999px;
 	background-color: #AFAFAF;  
@@ -197,6 +140,7 @@ html, body {
 	top: -1.8em;
 	left: 0;
 }
+
 .note {
 	font-size: 0.8em;
 	color: #8A8A8A;
@@ -204,7 +148,7 @@ html, body {
 	margin-top: 4em;
 }
 
-/* Scroller styling */
+
 .scroller {
   height: 1.2em;
   line-height: 1.2em;
@@ -212,13 +156,24 @@ html, body {
   overflow: hidden;
   width: 10em;
 }
+
 .scroller > span {
   position: absolute;
   top: 0;
   animation: slide 5s infinite;
   font-weight: bold;
-  
 }
+
+.mainText {
+  padding-left: 5%;
+  padding-right: 20%;
+}
+
+.mainText h1 {
+  color:white;
+  font-size: 4em;
+}
+
 @keyframes slide {
   0% {
     top: 0;
@@ -233,3 +188,4 @@ html, body {
     top: -3.6em;
   }
 }
+

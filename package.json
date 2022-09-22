@@ -9,7 +9,9 @@
   "author": "Ozzy",
   "license": "ISC",
   "description": "",
-  "devDependencies": {
-    "sass": "^1.54.9"
+  "dependencies": {
+    "locomotive-scroll": "^4.1.4",
+    "node-sass": "^7.0.3",
+    "smooth-scrollbar": "^8.8.1"
   }
 }
