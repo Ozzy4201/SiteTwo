@@ -1,4 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Koulen&display=swap');
 
+@font-face {
+  font-family: "Druk Wide";
+  src: url("https://assets.website-files.com/62deb76292f6783ebabb491e/62deba218550ebf0522d2feb_Druk%20Wide%20Bold.otf");
+} 
+@font-face {
+  font-family: "Druk Text";
+  src: url("../fonts/Druk_Text_Family/DrukText-Medium-Trial.otf")
+}
  html {
   --c0:rgb(188,215,248);
   --c1:rgb(126,166,215); 
@@ -12,6 +21,7 @@
   --c9:rgb(0,27,51); 
   --c10:rgb(0,16,31); 
   --c99:rgb(255,255,255);
+  background: var(--c10);
   }
   * {
     scroll-behavior: smooth;
@@ -19,20 +29,24 @@
   }
   
 .landscape {
+  display: block;
   background: var(--c1);
   height: 75vh;
   overflow: hidden;
   position: relative;
   
   &__layer {
-    height: 100%;
+    height: 75vh;
+    max-height: 75vh;
     left: 0;
     position: absolute;
     top: 0;
-    width: 100%;
-
+    min-width: 100vw;
+    width: 100vw;
+    max-width: 100vw;
+    margin-bottom: -0.1rem;
     transform: translateY(calc(var(--scrollPos, 0) * var(--offset, 0)));
-  
+
       @media (prefers-reduced-motion: reduce) {
         transform: translateY(0);
       }
@@ -50,6 +64,7 @@
     position: absolute;
     transform: translateX(-50%);
     width: 2500px;
+
     svg {
       display: block;
       height: auto;
@@ -57,11 +72,12 @@
     }
   }
 }
-  
+
 body {
   background: var(--c10);
   color: #fff;
   min-height: 200vh;
+  margin: 0;
 }
 
 .wrap {
@@ -97,9 +113,13 @@ button {
 .box h1 {
   font-weight: normal;
   color: black;
+  font-size: 1.6vw;
+  margin: 0;
+
 }
 
 a {
+  font-size: 1vw;
   text-decoration: none;
   font-weight: bold;
   background: linear-gradient(135deg, rgba(43,171,217,1) 0%, rgba(0,130,200,1) 100%);
@@ -110,20 +130,25 @@ a {
 
 html, body {
   font-family: "Montserrat", Arial;
+  height: 100%;
+  width: 100%;
 }
 
 .card {
+  font-family: 'Koulen', cursive;
   position: absolute;
   background-color: #F8F8F8;
-	border-radius: 1.5em;
-  min-width: 400px;
-	max-width: 500px;
-  width: 30%;
-	padding: 2.6em;
-  top: 40%;
+	border-radius: 1.5vw;
+  min-width: 18vw;
+	max-width: 18vw;
+  min-height: 10vw;
+  max-height: 12vw;
+	padding: 1.8vw;
+  top: 50vh;
+  left: 18vw;
   transform: translate(-50%, -50%);
-  left: 15%;
-	box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1), 
+	box-shadow: 
+    0 4px 4px rgba(0, 0, 0, 0.1), 
 		0 8px 8px rgba(0, 0, 0, 0.1),
 		0 16px 16px rgba(0, 0, 0, 0.1), 
 		0 32px 32px rgba(0, 0, 0, 0.15),
@@ -133,19 +158,19 @@ html, body {
 .note::after {
 	content: '';
 	width: 100%;
-	height: 2px;
+	height: 0.105vw;
 	border-radius: 999px;
-	background-color: #AFAFAF;  
+	background-color: #AFAFAF; 
 	position: absolute;
-	top: -1.8em;
+	top: -0.8vw;
 	left: 0;
-}
+} 
 
 .note {
 	font-size: 0.8em;
 	color: #8A8A8A;
 	position: relative;
-	margin-top: 4em;
+	margin-top: 1.7vw;
 }
 
 
@@ -165,14 +190,81 @@ html, body {
 }
 
 .mainText {
-  padding-left: 5%;
-  padding-right: 20%;
+  margin-top: 5%;
+  margin-left: 5%;
+  margin-right: 20%;
+  border-radius: 1.5em;
 }
 
 .mainText h1 {
+  font-family: 'Koulen', cursive;
+  margin-left: 0.75em; 
   color:white;
-  font-size: 4em;
+  font-size: 3.5vw;
 }
+
+.mainText p {
+  font-family: "Druk text", sans-serif;
+  font-size: 1.5vw;
+  letter-spacing: 0.05vw;
+  word-spacing: 0.15vw;
+  line-height: 1.7vw;
+  margin-left: 1vw;
+}
+
+nav{
+  margin-top: --scrollPos;
+  width: 100%;
+  z-index: 200;
+  position: fixed;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;  
+  height: 8vh;
+  font-family: 'Koulen', cursive;
+  background-color: #191a1a;
+}
+
+.logo {
+  color: #f2f2f2;
+  letter-spacing: 0.4vw;
+  font-size: 1.4vw;
+}
+
+nav ul{
+  width:50%;
+}
+
+.nav-links {
+  display: flex;
+  justify-content: space-around;
+  width: 30%;
+}
+
+.nav-links li{
+  list-style: none;
+}
+
+.nav-links a{
+  color: #f2f2f2;
+  text-decoration: none;
+  font-size: 1vw;
+  letter-spacing: 0.2vw;
+  font-weight: bold;
+  transition-duration: 500ms;
+  background: rgba(0,0,0,0)
+}
+
+.nav-links a:hover {
+  letter-spacing: 0.25vw;
+  padding: 0.3vw;
+  background-color: #666666;
+  color: #ffffff;
+  border-radius: 0.6vw 0.6vw 0.6vw 0.6vw;
+}
+
+
+
 
 @keyframes slide {
   0% {
@@ -189,3 +281,35 @@ html, body {
   }
 }
 
+.burger {
+  position: absolute;
+  right: 7vw;
+}
+
+.Top {
+  top: 0vw;
+	width: 2.667vw;
+	height: 0.3905vw;
+	margin: 0.521vw;
+	background: #FFFFFF;
+	box-shadow: 0px 0.313vw 0.313vw rgba(0, 0, 0, 0.25);
+	border-radius: 0.208vw;
+}
+.Middle {
+  top: 1.302vw;
+	width: 2.667vw;
+	height: 0.3905vw;
+	margin: 0.521vw;
+	background: #FFFFFF;
+	box-shadow: 0px 0.313vw 0.313vw rgba(0, 0, 0, 0.25);
+	border-radius: 0.208vw;
+}
+.Bottom {
+  top: 2.604vw;
+	width: 2.667vw;
+	height: 0.3905vw;
+	margin: 0.521vw;
+	background: #FFFFFF;
+	box-shadow: 0px 0.313vw 0.313vw rgba(0, 0, 0, 0.25);
+	border-radius: 0.208vw;
+}

@@ -34,8 +34,6 @@ function render(){
   
   
   main.style.transform = `translate3d(-${dx}px, -${dy}px, 0px)`;
- 
-  
   
   window.requestAnimationFrame(render);
 }

@@ -10,8 +10,11 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "type": "animejs",
+    "animejs": "^3.2.1",
     "locomotive-scroll": "^4.1.4",
     "node-sass": "^7.0.3",
     "smooth-scrollbar": "^8.8.1"
   }
+
 }
