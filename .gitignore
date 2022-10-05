@@ -131,5 +131,6 @@ dist
 .pnp.*
 
 .scss
-
 scss
+lib
+animation css
