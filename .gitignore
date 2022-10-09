@@ -134,3 +134,5 @@ dist
 scss
 lib
 animation css
+package-lock.json
+package.json

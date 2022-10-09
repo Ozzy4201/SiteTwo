@@ -93,22 +93,7 @@ a {
   text-decoration-color: var(--c6);
 }
   
-button {
-  font-weight: 900;
-  background: var(--c4);
-  border: 2px solid transparent;
-  color: var(--c10);
-  cursor: pointer;
-  display: inline-block;
-  padding: unquote(".5rem 2rem");
-  text-align: center;
-  text-decoration: none;
-  text-transform: uppercase;
-  transition: all .2s;  
-  &[data-active] {
-    background: var(--c1);
-  }
-}
+
 
 .box h1 {
   font-weight: normal;
@@ -213,7 +198,6 @@ html, body {
 }
 
 nav{
-  margin-top: --scrollPos;
   width: 100%;
   z-index: 200;
   position: fixed;
@@ -233,6 +217,8 @@ nav{
 
 nav ul{
   width:50%;
+  align-items: right;
+  list-style-type: none;
 }
 
 .nav-links {
@@ -243,6 +229,9 @@ nav ul{
 
 .nav-links li{
   list-style: none;
+  ::marker {
+    display: none;
+  }
 }
 
 .nav-links a{
@@ -265,7 +254,6 @@ nav ul{
 
 
 
-
 @keyframes slide {
   0% {
     top: 0;
@@ -282,34 +270,34 @@ nav ul{
 }
 
 .burger {
+  position: relative;
+  display: flex;
+  height: 5em;
+  width: 5em;
+  right: -95%;
+}
+
+#burger-part {
   position: absolute;
-  right: 7vw;
+  width: 2.5vw;
+	height: 0.4vw;
+  margin: 5%;
+  margin-top: 0.4vw;
+	background: #FFFFFF;
+	border-radius: 0.15vw;
 }
 
 .Top {
-  top: 0vw;
-	width: 2.667vw;
-	height: 0.3905vw;
-	margin: 0.521vw;
-	background: #FFFFFF;
-	box-shadow: 0px 0.313vw 0.313vw rgba(0, 0, 0, 0.25);
-	border-radius: 0.208vw;
+	left: 0vw;
+	top: 0vw;
 }
+
 .Middle {
-  top: 1.302vw;
-	width: 2.667vw;
-	height: 0.3905vw;
-	margin: 0.521vw;
-	background: #FFFFFF;
-	box-shadow: 0px 0.313vw 0.313vw rgba(0, 0, 0, 0.25);
-	border-radius: 0.208vw;
+	left: 0vw;
+	top: 0.82vw;
 }
+
 .Bottom {
-  top: 2.604vw;
-	width: 2.667vw;
-	height: 0.3905vw;
-	margin: 0.521vw;
-	background: #FFFFFF;
-	box-shadow: 0px 0.313vw 0.313vw rgba(0, 0, 0, 0.25);
-	border-radius: 0.208vw;
+	left: 0vw;
+	top: 1.6vw;
 }
