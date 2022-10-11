@@ -180,7 +180,8 @@ nav {
   font-size: 1.4vw; }
 
 nav ul {
-  width: 50%;
+  height: 3vw;
+  width: 50vw;
   align-items: right;
   list-style-type: none; }
 
@@ -246,4 +247,4 @@ nav ul {
 
 .Bottom {
   left: 0vw;
-  top: 1.6vw; }
+  top: 1.64vw; }
