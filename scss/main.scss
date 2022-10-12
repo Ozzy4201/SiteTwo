@@ -278,27 +278,27 @@ nav ul{
   right: -95%;
 }
 
-#burger-part {
+.burger-part {
   position: absolute;
   width: 2.5vw;
 	height: 0.4vw;
-  margin: 5%;
+  margin: 0.4vw;  
   margin-top: 0.4vw;
 	background: #FFFFFF;
 	border-radius: 0.15vw;
 }
 
-.Top {
+#Top {
 	left: 0vw;
 	top: 0vw;
 }
 
-.Middle {
-	left: 0vw;
+#Middle {
+	left: 0vw;  
 	top: 0.82vw;
 }
 
-.Bottom {
+#Bottom {
 	left: 0vw;
 	top: 1.64vw;
 }
