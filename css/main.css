@@ -224,9 +224,10 @@ nav ul {
 .burger {
   position: relative;
   display: flex;
-  height: 5em;
-  width: 5em;
-  right: -95%; }
+  height: 2.604vw;
+  width: 2.604vw;
+  right: -90%;
+  margin: 0; }
 
 .burger-part {
   position: absolute;
