@@ -10,9 +10,9 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "http-server": "^14.1.1",
     "locomotive-scroll": "^4.1.4",
     "node-sass": "^7.0.3",
     "smooth-scrollbar": "^8.8.1"
   }
-
 }

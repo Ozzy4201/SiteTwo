@@ -206,7 +206,7 @@ nav{
   align-items: center;  
   height: 8vh;
   font-family: 'Koulen', cursive;
-  background-color: #191a1a;
+  -webkit-background-filter: blur(5vw);
 }
 
 .logo {
@@ -259,14 +259,11 @@ nav ul{
   0% {
     top: 0;
   }
-  25% {
+  33% {
     top: -1.2em;
   }
-  50% {
+  66% {
     top: -2.4em;
-  }
-  75% {
-    top: -3.6em;
   }
 }
 
@@ -289,6 +286,8 @@ nav ul{
 	border-radius: 0.15vw;
 }
 
+
+
 #Top {
 	left: 0vw;
 	top: 0vw;
@@ -302,4 +301,22 @@ nav ul{
 #Bottom {
 	left: 0vw;
 	top: 1.64vw;
+}
+
+#Top:--clicked {
+	left: 0vw;
+	top: 0.82vw;
+  transform: rotate(-45deg)
+}
+
+#Middle:--clicked {
+	left: 0vw;  
+	top: 0.82vw;
+  opacity: 0;
+}
+
+#Bottom:--clicked {
+  left: 0vw;
+	top: 0.82vw;
+  transform: rotate(45deg)
 }
